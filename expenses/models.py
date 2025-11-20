@@ -8,7 +8,7 @@ class Expense(models.Model):
     name = models.CharField(max_length=100, default="Não informado/ Gerais")
     category = models.ForeignKey('categories.Category', on_delete=models.CASCADE)
     value = models.DecimalField(max_digits=10, decimal_places=2)
-    type_expense = models.CharField(default = 'à vista', choices = [('à vista', 'à vista'), ('parcelado', 'parcelado')]) #se parcelado, cria-se um registro na tabela de parcelas
+    type_expense = models.CharField(default = 'à vista', choices = [('à vista', 'à vista'), ('parcelado', 'parcelado'), ('mensal', 'mensal')]) #se parcelado, cria-se um registro na tabela de parcelas
     date = models.DateField(default = date.today)
     
     def __str__(self):
